@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ninjazypy"
+version = "0.1.0"
+description = "Python 7z zip/unzip utility"
+authors = [{name="Your Name"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["py7zr"]
+
+[project.scripts]
+ninjazypy = "ninjazypy.cli:main"

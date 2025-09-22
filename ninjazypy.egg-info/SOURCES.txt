@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+ninjazypy/__init__.py
+ninjazypy/cli.py
+ninjazypy/core.py
+ninjazypy.egg-info/PKG-INFO
+ninjazypy.egg-info/SOURCES.txt
+ninjazypy.egg-info/dependency_links.txt
+ninjazypy.egg-info/entry_points.txt
+ninjazypy.egg-info/requires.txt
+ninjazypy.egg-info/top_level.txt
