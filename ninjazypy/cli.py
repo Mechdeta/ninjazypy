@@ -1,28 +1,19 @@
-import argparse
-from .core import zip, unzip
+import sys
+from ninjazypy.core import zip, unzip
 
 def main():
-    parser = argparse.ArgumentParser(description="NinjaZipPy - 7z Zipper/Unzipper")
-    subparsers = parser.add_subparsers(dest="command", required=True)
+    if len(sys.argv) < 4:
+        print("Usage: ninjazypy zip/unzip <input> <output>")
+        return
 
-    # Zip command
-    zip_parser = subparsers.add_parser("zip", help="Compress files/folders into .7z")
-    zip_parser.add_argument("src", help="Source file or folder to compress")
-    zip_parser.add_argument("dest", help="Destination .7z archive")
+    cmd, inp, outp = sys.argv[1:4]
 
-    # Unzip command
-    unzip_parser = subparsers.add_parser("unzip", help="Extract .7z archive")
-    unzip_parser.add_argument("archive", help="Archive file (.7z)")
-    unzip_parser.add_argument("dest", help="Destination folder")
-
-    args = parser.parse_args()
-
-    if args.command == "zip":
-        zip(args.src, args.dest)
-        print(f"Compressed {args.src} → {args.dest}")
-    elif args.command == "unzip":
-        unzip(args.archive, args.dest)
-        print(f"Extracted {args.archive} → {args.dest}")
+    if cmd.lower() == "zip":
+        zip(inp, outp)
+    elif cmd.lower() == "unzip":
+        unzip(inp, outp)
+    else:
+        print("Invalid command! Use 'zip' or 'unzip'.")
 
 if __name__ == "__main__":
     main()
