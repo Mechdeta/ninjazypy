@@ -5,11 +5,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ninjazypy"
 version = "0.1.0"
-description = "Python 7z zip/unzip utility"
-authors = [{name="Pranav Deshmukh"}]
-readme = "README.md"
-requires-python = ">=3.9"
-dependencies = ["py7zr"]
+description = "A Python utility for .7z compression and extraction"
+authors = [{name="Pranav Deshmukh", email="pranv.deshmukh05@gmail.com"}]
+dependencies = []
 
-[project.scripts]
-ninjazypy = "ninjazypy.cli:main"
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["testfolder"]
